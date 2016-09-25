@@ -1,6 +1,10 @@
 .theHeader {
-  /*background: url('') center / cover;*/
+  background: url('pad.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
+
 .theHeader .mdl-layout__header,
 .theHeader .mdl-layout__drawer-button,
 .theHeader .mdl-navigation__link
@@ -26,4 +30,8 @@
 
 .mdl-snackbar__action {
 	display: hidden;
+}
+
+footer {
+	padding: 0 !important;
 }
