@@ -1,0 +1,29 @@
+.theHeader {
+  /*background: url('') center / cover;*/
+}
+.theHeader .mdl-layout__header,
+.theHeader .mdl-layout__drawer-button,
+.theHeader .mdl-navigation__link
+{
+  color: #000 !important;
+}
+
+.user-avatar {
+	height: 200px;
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.user-dropdown {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.mdl-snackbar__text {
+	text-align: center;
+}
+
+.mdl-snackbar__action {
+	display: hidden;
+}

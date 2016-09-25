@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="The sites description">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Index</title>
+</head>
+<body>
+	<div class="theHeader mdl-layout mdl-js-layout">
+	  <header class="mdl-layout__header mdl-layout__header--transparent">
+	    <div class="mdl-layout__header-row">
+	      <span class="mdl-layout-title">Title</span>
+	      <div class="mdl-layout-spacer"></div>
+	      <nav class="mdl-navigation">
+	        <a class="mdl-navigation__link" href="">Link</a>
+	        <a class="mdl-navigation__link" href="">Link</a>
+	        <a class="mdl-navigation__link" href="">Link</a>
+	        <a class="mdl-navigation__link" href="">Link</a>
+	        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+		        <label class="mdl-button mdl-js-button mdl-button--icon"
+		               for="waterfall-exp">
+		          <i class="material-icons">search</i>
+		        </label>
+		        <div class="mdl-textfield__expandable-holder">
+		          <input class="mdl-textfield__input" type="text" name="sample"
+		                 id="waterfall-exp">
+		        </div>
+	        </div>
+	      </nav>
+	    </div>
+	  </header>
+	  <div class="mdl-layout__drawer">
+	  	<span class="mdl-layout-title drawerTitle">The Events Title</span>
+	    <img src="user.png" class="user-avatar">
+          <div class="user-dropdown">
+            <span>More User Options</span>
+            <button id="info" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+              <i class="material-icons" role="presentation">arrow_drop_down</i>
+              <span class="visuallyhidden"></span>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="info">
+              <li class="mdl-menu__item">Option One</li>
+              <li class="mdl-menu__item">Option Two</li>
+            </ul>
+          </div>
+	    <nav class="mdl-navigation">
+	      <a class="mdl-navigation__link" href="">Link</a>
+	      <a class="mdl-navigation__link" href="">Link</a>
+	      <a class="mdl-navigation__link" href="">Link</a>
+	      <a class="mdl-navigation__link" href="">Link</a>
+	    </nav>
+	  </div>
+	  <div id="welcomeToast" class="mdl-js-snackbar mdl-snackbar">
+		  <div class="mdl-snackbar__text"></div>
+		  <button class="mdl-snackbar__action" type="button"></button>
+	  </div>
+	  <main class="mdl-layout__content">
+	  </main>
+	  <footer class="mdl-mini-footer">
+	  <div class="mdl-mini-footer__left-section">
+	    <div class="mdl-logo">Title</div>
+	    <ul class="mdl-mini-footer__link-list">
+	      <li><a href="#">Help</a></li>
+	      <li><a href="#">Privacy & Terms</a></li>
+	    </ul>
+	  </div>
+	</footer>
+	</div>
+<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+<script>
+r(function(){
+    var snackbarContainer = document.querySelector('#welcomeToast');
+    var data = { message: 'Welcome User',
+				 timeout: 5000
+ 			};
+    snackbarContainer.MaterialSnackbar.showSnackbar(data);
+});
+function r(f){ /in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
+</script>
+</body>
+</html>
