@@ -32,6 +32,15 @@
 		                 id="waterfall-exp">
 		        </div>
 	        </div>
+	        <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
+			  <i class="material-icons">more_vert</i>
+			</button>
+			<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+			    for="demo-menu-lower-right">
+			  <li class="mdl-menu__item">Some Action</li>
+			  <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li>
+			  <li class="mdl-menu__item">Yet Another Action</li>
+			</ul>
 	      </nav>
 	    </div>
 	  </header>
@@ -60,7 +69,71 @@
 		  <div class="mdl-snackbar__text"></div>
 		  <button class="mdl-snackbar__action" type="button"></button>
 	  </div>
-	  <main class="mdl-layout__content">
+	  <main class="mdl-layout__content">  		
+	  	<div class="cover">
+	  		<h4 class="coverHeader">Patients to Treat</h4>
+		  	<div class="notepad">
+		  		<div class="lines"></div>
+		  		<ul class="list">
+					<li>Patient
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect show-modal">
+					  Button
+					</button>
+					<dialog class="mdl-dialog">
+					    <div class="mdl-dialog__content">
+					      <p>
+					        Allow this site to collect usage data to improve your experience?
+					      </p>
+					    </div>
+					    <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+					      <button type="button" class="mdl-button">Agree</button>
+					      <button type="button" class="mdl-button close">Disagree</button>
+					    </div>
+					  </dialog>
+					</li>
+					<li>Patient
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+					  Button
+					</button></li>
+					<li>Patient
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+					  Button
+					</button></li>
+					<li>Patient
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+					  Button
+					</button></li>
+					<li>Patient
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+					  Button
+					</button></li>
+					<li>Patient
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+					  Button
+					</button></li>
+					<li>Patient
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+					  Button
+					</button></li>
+					<li>Patient
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+					  Button
+					</button></li>
+					<li>Patient
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+					  Button
+					</button></li>
+					<li>Patient
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+					  Button
+					</button></li>
+					<li>Patient
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+					  Button
+					</button></li>
+		  		</ul>
+		  	</div>
+	  	</div>
 	  </main>
 	  <footer class="mdl-mini-footer">
 	  <div class="mdl-mini-footer__left-section">
@@ -80,6 +153,17 @@ r(function(){
 				 timeout: 5000
  			};
     snackbarContainer.MaterialSnackbar.showSnackbar(data);
+    var dialog = document.querySelector('dialog');
+    var showModalButton = document.querySelector('.show-modal');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    showModalButton.addEventListener('click', function() {
+      dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+    });
 });
 function r(f){ /in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
 </script>
