@@ -7,16 +7,42 @@ other #e80000
 #8b8177
 #5151ff*/
 
+@import 'https://fonts.googleapis.com/css?family=Indie+Flower';
+@import 'https://fonts.googleapis.com/css?family=Lobster';
+@import 'https://fonts.googleapis.com/css?family=Bree+Serif';
+
 .theHeader {
   background-position: center;
   background-repeat: no-repeat;
-/*  background-size: contain;
-*/  overflow-y: hidden;
-  background-color: #fff9cd;
+  background-size: cover;
+  overflow-y: hidden;
+  background-image: url("../image/background.jpg");
+}
+
+.right {
+	float: right;
+	text-align: right;
+}
+
+.left {
+	float: left;
+	text-align: left;
+}
+
+.background {
+	z-index: 0;
+}
+
+.mdl-layout__header {
+	background-color: #fff;
 }
 
 body {
-	background-color: #fff9cd;
+	  font-family: 'Bree Serif', serif;
+}
+
+button {
+	  font-family: 'Bree Serif', serif!important;
 }
 
 .theHeader .mdl-layout__header,
@@ -65,7 +91,6 @@ footer {
 
 .loginBody {
 	height: 100%;
-	background-color: #fff9cd;
 }
 
 #loginForm{
@@ -80,15 +105,14 @@ footer {
 
 .coverHeader {
 	text-align: center;
+	font-family: 'Lobster', cursive;
 }
 
-.cover {
-	box-shadow: 15px 15px 10px #ccc;
+.notepad li span {
+	font-family: 'Indie Flower', cursive;
+	font-size: 20px;
 }
 
-.notepad {
-	box-shadow: 10px 10px 5px #1f8dba;
-}
 
 @media screen and (min-width: 0px) {
 
@@ -98,7 +122,7 @@ footer {
 
 	.cover {
 	width: auto;
-	background-color: #45b3e0;
+	background-color:	#d6955f;
 	margin: auto;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -107,7 +131,7 @@ footer {
 
 .notepad {
 	background-color: #e6e9ed;
-	width: 99%;
+	width: 95%;
 	margin: auto;
 	border-radius: 30px;
 }
@@ -140,7 +164,7 @@ footer {
   -o-transition:      all 0.2s;
   border-radius: 30px;
 }
-.lines {
+.cover .lines {
   border-left: 1px solid #ffaa9f;
   border-right: 1px solid #ffaa9f;
   width: 2px;
@@ -149,6 +173,15 @@ footer {
   margin-left: 40px;
 }
     
+.leaderboard .lines {
+	border-left: 1px solid #ffaa9f;
+  border-right: 1px solid #ffaa9f;
+  width: 2px;
+  float: left;
+  height: 450px;
+  margin-left: 40px;
+}
+
 }
 
 @media screen and (min-width: 360px) {
@@ -158,7 +191,7 @@ footer {
 }
 	.cover {
 	width: 90%;
-	background-color: #45b3e0;
+	background-color:	#d6955f;
 	margin: auto;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -170,6 +203,7 @@ footer {
 	width: 95%;
 	margin: auto;
 	border-radius: 30px;
+	box-shadow: 8px 8px 4px #a15d1a;
 }
 
 .list {
@@ -214,11 +248,11 @@ footer {
 @media screen and (min-width: 724px) {
 
 	.mdl-layout__content {
-	padding: 20px;
+	padding: 20px
 }
 	.cover {
 	width: 80%;
-	background-color: #45b3e0;
+	background-color:	#d6955f;
 	margin: auto;
 	padding-top: 10px;
 	padding-bottom: 5px;
@@ -230,6 +264,7 @@ footer {
 	width: 90%;
 	margin: auto;
 	border-radius: 30px;
+	box-shadow: 10px 10px 5px #a15d1a;
 }
 
 .list {
