@@ -41,7 +41,7 @@ def oauth_callback(provider):
 		return redirect(url_for('index'))
 	user = User.query.filter_by(email=email).first()
 	if not user:
-		user = User(name=username,email=email,level=1)
+		user = User(name=username,email=email,level=1,stage=1)
 		db.session.add(user)
 		db.session.commit()
 	login_user(user,True)
