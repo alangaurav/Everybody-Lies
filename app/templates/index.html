@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Unnamed</title>
+	</head>
+	<body>
+	<form action="" method="POST" name=login>
+		{{login_form.hidden_tag()}}
+		<P>
+		{{login_form.provider(size=80)}}
+		</P>
+		{{login_form.submit()}}
+	</body>
+
+	<P>
+  	{%for message in get_flashed_messages()%}
+  	<br>
+  	<h3 style="color:red">{{message}}</h3>
+  	{%endfor%}
+	</p>
+</html>
