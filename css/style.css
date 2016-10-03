@@ -5,7 +5,8 @@ other #e80000
 #00009c
 #5cb600
 #8b8177
-#5151ff*/
+#5151ff
+NOT USING THIS*/
 
 @import 'https://fonts.googleapis.com/css?family=Indie+Flower';
 @import 'https://fonts.googleapis.com/css?family=Lobster';
@@ -164,6 +165,7 @@ footer {
   -o-transition:      all 0.2s;
   border-radius: 30px;
 }
+
 .cover .lines {
   border-left: 1px solid #ffaa9f;
   border-right: 1px solid #ffaa9f;
@@ -179,6 +181,15 @@ footer {
   width: 2px;
   float: left;
   height: 450px;
+  margin-left: 40px;
+}
+
+.test .lines {
+  border-left: 1px solid #ffaa9f;
+  border-right: 1px solid #ffaa9f;
+  width: 2px;
+  float: left;
+  height: 765px;
   margin-left: 40px;
 }
 
