@@ -122,6 +122,10 @@ footer {
 	font-size: 20px;
 }
 
+.modal__trigger {
+	float: right;
+}
+
 
 @media screen and (min-width: 0px) {
 
@@ -158,11 +162,6 @@ footer {
 	  text-indent: 25px;
 	  height: auto;
 	  padding: 20px;
-	}
-
-	.list li button {
-		float: right;
-		vertical-align: center;
 	}
 
 	.list li:hover {
@@ -240,11 +239,6 @@ footer {
 	  padding: 20px;
 	}
 
-	.list li button {
-		float: right;
-		vertical-align: center;
-	}
-
 	.list li:hover {
 	  background-color: #f0f0f0;
 	  -webkit-transition: all 0.2s;
@@ -299,11 +293,6 @@ footer {
 	  text-indent: 25px;
 	  height: auto;
 	  padding: 20px;
-	}
-
-	.list li button {
-		float: right;
-		vertical-align: center;
 	}
 
 	.list li:hover {
