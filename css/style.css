@@ -59,6 +59,13 @@ button {
   color: #000 !important;
 }
 
+.gkimg {
+	max-height: 400px;
+	max-width: 400px;
+	align-self: center;
+	margin: auto;
+}
+
 .user-avatar {
 	height: 200px;
 	width: 200px;
@@ -123,11 +130,6 @@ footer {
 	font-family: 'Indie Flower', cursive;
 	font-size: 20px;
 }
-
-.modal__trigger {
-	float: right;
-}
-
 
 @media screen and (min-width: 0px) {
 

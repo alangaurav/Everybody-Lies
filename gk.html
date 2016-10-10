@@ -9,7 +9,8 @@
 	<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/modal.css">
-	<title>Gk</title>
+	<link rel="stylesheet" type="text/css" href="css/snackbar.css">
+	<title>GK</title>
 </head>
 <body>
 	<div class="theHeader mdl-layout mdl-js-layout">
@@ -76,10 +77,14 @@
 		  	<div class="notepad">
 		  		<div class="lines"></div>
 		  		<ul class="list">
+		  			<li>
+	  					<span class="left"><a href=""><i class="material-icons">keyboard_arrow_left</i></a></span>
+						<span class="right"><a href=""><i class="material-icons">keyboard_arrow_right</i></a></span>
+		  			</li>
 					<li>Add some random ass motherfucking question here!    
-					</li>
-					<li>    
-					<li>    
+					</li>    
+					<li class="center gkimg">
+						<img src="pad.jpg">    
 					</li>
 					<li>    
 					</li>
@@ -94,9 +99,8 @@
 					    <label class="mdl-textfield__label" for="ans">Answer</label>
 					  </div>
 					</form>  
-					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-					  		Submit
-						</button>  
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="myFunction()">Submit</button>  
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">Skip</button> 
 					</li>
 					<li>  
 					</li>
@@ -109,6 +113,7 @@
 		  		</ul>
 		  	</div>
 	  	</div>
+	  	<div id="snackbar"></div>
 	  </main>
 	  <footer class="mdl-mini-footer">
 	  <div class="mdl-mini-footer__left-section">
@@ -124,5 +129,17 @@
 <script   src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>  
 <script type="text/javascript" src="js/backstretch.min.js"></script>
 <script type="text/javascript" src="js/modal.js"></script>
+<script type="text/javascript">
+function myFunction() {
+	    // Get the snackbar DIV
+	    var x = document.getElementById("snackbar")
+
+	    // Add the "show" class to DIV
+	    x.className = "show";
+
+	    // After 3 seconds, remove the show class from DIV
+	    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+	}
+</script>
 </body>
 </html>
