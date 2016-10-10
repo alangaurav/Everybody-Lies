@@ -134,6 +134,10 @@ footer {
 	min-height: 25px;
 }
 
+.mdl-textfield {
+	[padding: 0px !important]
+}
+
 @media screen and (min-width: 0px) {
 
 	.mdl-layout__content {
