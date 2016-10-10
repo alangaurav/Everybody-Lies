@@ -13,7 +13,6 @@ NOT USING THIS*/
 @import 'https://fonts.googleapis.com/css?family=Bree+Serif';
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
 
-
 .theHeader {
   background-position: center;
   background-repeat: no-repeat;
@@ -129,6 +128,10 @@ footer {
 .notepad li span {
 	font-family: 'Indie Flower', cursive;
 	font-size: 20px;
+}
+
+.list li {
+	min-height: 25px;
 }
 
 @media screen and (min-width: 0px) {
@@ -316,5 +319,9 @@ footer {
 	  margin-left: 40px;
 	}*/
     
+}
+
+.material-icons {
+	font-size: 45px !important;
 }
 
