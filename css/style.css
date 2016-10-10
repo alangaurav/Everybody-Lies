@@ -11,6 +11,8 @@ NOT USING THIS*/
 @import 'https://fonts.googleapis.com/css?family=Indie+Flower';
 @import 'https://fonts.googleapis.com/css?family=Lobster';
 @import 'https://fonts.googleapis.com/css?family=Bree+Serif';
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
+
 
 .theHeader {
   background-position: center;
@@ -43,11 +45,11 @@ NOT USING THIS*/
 }
 
 body {
-	  font-family: 'Bree Serif', serif;
+	  font-family: 'Source Sans Pro', sans-serif;
 }
 
 button {
-	  font-family: 'Bree Serif', serif!important;
+	  font-family: 'Source Sans Pro', sans-serif;!important;
 }
 
 .theHeader .mdl-layout__header,
@@ -78,7 +80,7 @@ button {
 }
 
 footer {
-	padding: 0 !important;
+	padding: 5px !important;
 }
 
 .mdl-card__actions {
@@ -173,32 +175,32 @@ footer {
 	  border-radius: 30px;
 	}
 
-	.cover .lines {
+	/*.cover .lines {
 	  border-left: 1px solid #ffaa9f;
 	  border-right: 1px solid #ffaa9f;
 	  width: 2px;
 	  float: left;
 	  height: 715px;
 	  margin-left: 40px;
-	}
+	}*/
 	    
-	.leaderboard .lines {
+	/*.leaderboard .lines {
 		border-left: 1px solid #ffaa9f;
 	  border-right: 1px solid #ffaa9f;
 	  width: 2px;
 	  float: left;
 	  height: 450px;
 	  margin-left: 40px;
-	}
+	}*/
 
-	.test .lines {
+	/*.test .lines {
 	  border-left: 1px solid #ffaa9f;
 	  border-right: 1px solid #ffaa9f;
 	  width: 2px;
 	  float: left;
 	  height: 765px;
 	  margin-left: 40px;
-	}
+	}*/
 
 }
 
@@ -247,14 +249,14 @@ footer {
 	  -o-transition:      all 0.2s;
 	  border-radius: 30px;
 	}
-	.lines {
+	/*.lines {
 	  border-left: 1px solid #ffaa9f;
 	  border-right: 1px solid #ffaa9f;
 	  width: 2px;
 	  float: left;
 	  height: 715px;
 	  margin-left: 40px;
-	}
+	}*/
     
 }
 
@@ -303,14 +305,14 @@ footer {
 	  -o-transition:      all 0.2s;
 	  border-radius: 30px;
 	}
-	.lines {
+	/*.lines {
 	  border-left: 1px solid #ffaa9f;
 	  border-right: 1px solid #ffaa9f;
 	  width: 2px;
 	  float: left;
 	  height: 715px;
 	  margin-left: 40px;
-	}
+	}*/
     
 }
 
