@@ -72,11 +72,44 @@
 		  	<div class="notepad">
 		  		<div class="lines"></div>
 		  		<ul class="list">
-		  		{%for answer in mcq.answers%}
+		  		<li>
+		  			<span class="left"><a href=""><i class="material-icons">forward</i></a></span>
+					<span class="modal__trigger" data-modal="#testResults">
+					  All Test Results
+					</span>
+					<span class="right"><a href=""><i class="material-icons">forward</i></a></span>
+					<div id="testResults" class="modal modal__bg">
+				        <div class="modal__dialog">
+				          <div class="modal__content">
+				            <div class="modal__header">
+				              <div class="modal__title">
+				                <h2 class="modal__title-text">Results</h2>
+				              </div>
+				              <span class="mdl-button mdl-button--icon mdl-js-button  material-icons  modal__close"></span>
+				            </div>
+				            <div class="modal__text">
+				              <p>
+				               Add the test results here.
+				              </p>
+				            </div>
+				            <div class="modal__footer">
+				              <a class="mdl-button mdl-button--colored mdl-js-button  modal__close">
+				                Close
+				              </a>
+				            </div>
+				          </div>
+				        </div>
+				      </div>
+					</li>
+		  			{%for answer in mcq.answers%}
 					<li><span>{{answer.answer}}</span>
-					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored modal__trigger" data-modal="#modal">
-					  Button
-					</button>
+					<a href={{url_for('post_treat',stage=stage,answer=answer.answer,patient_name=patient_name)}} class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored modal__trigger">
+					  Run
+					</a>
+					</li>
+					{%endfor%}
+					{%for i in range(13-(mcq.answer|length))%}
+					<li><span></span>
 					<div id="modal" class="modal modal__bg">
 				        <div class="modal__dialog">
 				          <div class="modal__content">
@@ -108,10 +141,10 @@
 				        </div>
 				      </div>
 					</li>
+
 					{%endfor%}
-					
 					<span class="modal__trigger left" data-modal="#testResults">
-					  All Test Results
+					  Patient Log
 					</span>
 					<span class="modal__trigger right" data-modal="#notes">
 					  My Notes
