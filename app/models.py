@@ -18,10 +18,11 @@ class Level(db.Model):
     history = db.Column(db.String(1000))
     age = db.Column(db.String(10))
     is_male = db.Column(db.Boolean,default=True)
+    occupation = db.Column(db.String(50))
     description = db.Column(db.String(1000))
     history = db.Column(db.String(2000))
     reward = db.Column(db.Integer)
-    release_time = db.Column(db.DateTime)
+    is_active = db.Column(db.Boolean,default=False)
 
     def __str__(self):
         return self.name
@@ -33,6 +34,7 @@ class Mcq(db.Model):
     level = db.relationship(Level,backref='Mcqs')
     stage = db.Column(db.Integer)
     is_unlocking = db.Column(db.Boolean)
+    is_end = db.Column(db.Boolean)
     def __str__(self):
         return self.question
 
@@ -44,7 +46,7 @@ class GkQuestion(db.Model):
     level_id = db.Column(db.Integer,db.ForeignKey('level.id'))
     level = db.relationship(Level,backref='gk_questions')
     stage = db.Column(db.Integer)
-
+    is_unlocking = db.Column(db.Boolean)
     def __str__(self):
         return self.question
 
@@ -109,7 +111,19 @@ class Conversations(db.Model):
     level_id = db.Column(db.Integer,db.ForeignKey('level.id'))
     level = db.relationship(Level,backref='conversations')
     stage = db.Column(db.Integer)
-
     def __str__(self):
         return self.result
 
+class LevelEnd(db.Model):
+    id = db.Column(db.Integer,primary_key=True)
+    diagnosis = db.Column(db.String(500))
+    level_id = db.Column(db.Integer,db.ForeignKey('level.id'))
+    level = db.relationship(Level,backref='diagnosis')
+    stage = db.Column(db.Integer)
+
+class Event(db.Model):
+    id = db.Column(db.Integer,primary_key=True)
+    text = db.Column(db.String(1000))
+    level_id = db.Column(db.Integer,db.ForeignKey('level.id'))
+    level = db.relationship(Level,backref='events')
+    stage = db.Column(db.Integer)

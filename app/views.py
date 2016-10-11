@@ -15,12 +15,14 @@ def load_user(id):
 @app.route('/',methods=['GET','POST'])
 @app.route('/login',methods=['GET','POST'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
     login_form = LoginForm()
     
     if login_form.validate_on_submit():
         return redirect(url_for('oauth_authorize',provider=login_form.provider.data))
 
-    return render_template('comingsoon.html',login_form=login_form)
+    return render_template('login.html',login_form=login_form)
 
 @app.route('/authorize/<provider>')
 def oauth_authorize(provider):
@@ -48,14 +50,16 @@ def oauth_callback(provider):
     flash('authentication successful')
     return redirect(url_for('index'))
 
-
 @app.route('/index',methods=['GET','POST'])
+@login_required
 def index():
     patients = Level.query.all()
     #gk_forms = 
     return render_template('index.html',patients=patients)
 
+
 @app.route('/treat/<patient_name>/')
+@login_required
 def pre_treat(patient_name):
     print patient_name
     patient = Level.query.filter_by(name=patient_name).first()
@@ -75,7 +79,9 @@ def pre_treat(patient_name):
     
     return redirect(url_for('treat',patient_name=patient_name,stage=current_progress.stage))
 
+
 @app.route('/treat/<patient_name>/<stage>',methods=['GET','POST'])
+@login_required
 def treat(patient_name,stage):
     print "We'ere back"
     patient = Level.query.filter_by(name=patient_name).first()
@@ -157,6 +163,7 @@ def treat(patient_name,stage):
 
 
 @app.route('/treat/<patient_name>/<stage>/<answer>')
+@login_required
 def post_treat(patient_name,stage,answer):
     patient = Level.query.filter_by(name=patient_name).first()
     progress = Progress.query.filter_by(user_id=current_user.id,level_id=patient.id).first()
@@ -191,7 +198,14 @@ def post_treat(patient_name,stage,answer):
 
 
 @app.route('/rules')
+@login_required
 def rules():
     return render_template('rules.html')
 
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
 
