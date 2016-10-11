@@ -15,12 +15,12 @@
 	<div class="theHeader mdl-layout mdl-js-layout">
 	  <header class="mdl-layout__header">
 	    <div class="mdl-layout__header-row">
-	      <span class="mdl-layout-title">Everyody Lies</span>
+	      <span class="mdl-layout-title">Everybody Lies</span>
 	      <div class="mdl-layout-spacer"></div>
 	      <nav class="mdl-navigation">
-	        <a class="mdl-navigation__link" href="">Home</a>
-	        <a class="mdl-navigation__link" href="">Rules</a>
-	        <a class="mdl-navigation__link" href="">About</a>
+	        <a class="mdl-navigation__link" href="{{url_for('index')}}">Home</a>
+	        <a class="mdl-navigation__link" href="{{url_for('rules')}}">Rules</a>
+	        <a class="mdl-navigation__link" href="{{url_for('logout')}}">Logout</a>
 			<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
 			    for="demo-menu-lower-right">
 			  <li class="mdl-menu__item">Some Action</li>
@@ -31,25 +31,13 @@
 	    </div>
 	  </header>
 	  <div class="mdl-layout__drawer">
-	  	<span class="mdl-layout-title drawerTitle">Everyody Lies</span>
+	  	<span class="mdl-layout-title drawerTitle">Everybody Lies</span>
 	    <img src="image/user.png" class="user-avatar">
-          <div class="user-dropdown">
-            <span>More User Options</span>
-            <button id="info" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-              <i class="material-icons" role="presentation">arrow_drop_down</i>
-              <span class="visuallyhidden"></span>
-            </button>
-            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="info">
-              <li class="mdl-menu__item">Option One</li>
-              <li class="mdl-menu__item">Option Two</li>
-            </ul>
-          </div>
 	    <nav class="mdl-navigation">
-	      <a class="mdl-navigation__link" href="">Link</a>
-	      <a class="mdl-navigation__link" href="">Link</a>
-	      <a class="mdl-navigation__link" href="">Link</a>
-	      <a class="mdl-navigation__link" href="">Link</a>
-	      <a class="mdl-navigation__link modal__trigger" data-modal="#patientHistory">Patient File</a>  
+	    <a class="mdl-navigation__link" href="{{url_for('index')}}">Home</a>
+	        <a class="mdl-navigation__link" href="{{url_for('rules')}}">Rules</a>
+	        <a class="mdl-navigation__link" href="{{url_for('logout')}}">Logout</a>
+	     <a class="mdl-navigation__link modal__trigger" data-modal="#patientHistory">Patient File</a>  
 	    </nav>
 	  </div>
 	  <div id="welcomeToast" class="mdl-js-snackbar mdl-snackbar">

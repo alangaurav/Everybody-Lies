@@ -13,4 +13,9 @@ class GkForm(Form):
 
 class McqForm(Form):
     options = RadioField(choices=[],coerce=int)
+    skip = SubmitField('Skip')
+    submit = SubmitField('Submit')
+
+class EndForm(Form):
+    answer = StringField('Enter your answer',validators=[DataRequired()])
     submit = SubmitField('Submit')
