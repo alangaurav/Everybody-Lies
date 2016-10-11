@@ -22,20 +22,6 @@
 	        <a class="mdl-navigation__link" href="">Link</a>
 	        <a class="mdl-navigation__link" href="">Link</a>
 	        <a class="mdl-navigation__link" href="">Link</a>
-	        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
-                  mdl-textfield--floating-label mdl-textfield--align-right">
-		        <label class="mdl-button mdl-js-button mdl-button--icon"
-		               for="waterfall-exp">
-		          <i class="material-icons">search</i>
-		        </label>
-		        <div class="mdl-textfield__expandable-holder">
-		          <input class="mdl-textfield__input" type="text" name="sample"
-		                 id="waterfall-exp">
-		        </div>
-	        </div>
-	        <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
-			  <i class="material-icons">more_vert</i>
-			</button>
 			<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
 			    for="demo-menu-lower-right">
 			  <li class="mdl-menu__item">Some Action</li>
@@ -50,10 +36,10 @@
 	    <img src="{{url_for('static',filename='image/user.png')}}" class="user-avatar">
           <div class="user-dropdown">
             <span>More User Options</span>
-            <button id="info" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <a id="info" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#">
               <i class="material-icons" role="presentation">arrow_drop_down</i>
               <span class="visuallyhidden"></span>
-            </button>
+            </a>
             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="info">
               <li class="mdl-menu__item">Option One</li>
               <li class="mdl-menu__item">Option Two</li>
@@ -78,39 +64,9 @@
 		  		<ul class="list">
 		  		{%for patient in patients%}
 					<li><span>{{patient.name}}</span>
-					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored modal__trigger" data-modal="#modal9">
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored right">
 					  Button
 					</button>
-					<div id="modal9" class="modal modal__bg">
-				        <div class="modal__dialog">
-				          <div class="modal__content">
-				            <div class="modal__header">
-				              <div class="modal__title">
-				                <h2 class="modal__title-text">Question</h2>
-				              </div>
-				              <span class="mdl-button mdl-button--icon mdl-js-button  material-icons  modal__close"></span>
-				            </div>
-				            <div class="modal__text">
-				              <p>
-				               {%for gk in patient.gk_questions%}
-				               	{{gk.question}}
-				               {%endfor%}
-				               <form>
-								  <div class="mdl-textfield mdl-js-textfield">
-								    <input class="mdl-textfield__input" type="text" id="answer">
-								    <label class="mdl-textfield__label" for="answer">Answer</label>
-								  </div>
-						   		</form>
-				              </p>
-				            </div>
-				            <div class="modal__footer">
-				              <a class="mdl-button mdl-button--colored mdl-js-button  modal__close">
-				                Submit
-				              </a>
-				            </div>
-				          </div>
-				        </div>
-				      </div>
 					</li>
 				{%endfor%}
 		  		</ul>
@@ -119,10 +75,10 @@
 	  </main>
 	  <footer class="mdl-mini-footer">
 	  <div class="mdl-mini-footer__left-section">
-	    <div class="mdl-logo">Title</div>
+	    <div class="mdl-logo"></div>
 	    <ul class="mdl-mini-footer__link-list">
-	      <li><a href="#">Help</a></li>
-	      <li><a href="#">Privacy & Terms</a></li>
+	      <li><a href="https://github.com/catatonia">Beer And LIT</a></li>
+	      <li><a href="https://www.youtube.com/watch?v=QK8mJJJvaes">BMESI</a></li>
 	    </ul>
 	  </div>
 	</footer>

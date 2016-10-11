@@ -13,6 +13,19 @@ NOT USING THIS*/
 @import 'https://fonts.googleapis.com/css?family=Bree+Serif';
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
 
+a {
+	cursor: pointer!important;
+}
+
+.green {
+
+	color: #91EB76;
+}
+
+.strike {
+	text-decoration: line-through;
+}
+
 .theHeader {
   background-position: center;
   background-repeat: no-repeat;
@@ -222,7 +235,6 @@ form input[type="radio"]:empty ~ label {
 	float: left;
 	line-height: 2.5em;
 	text-indent: 3.25em;
-	margin-top: 2em;
 	cursor: pointer;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -252,6 +264,16 @@ form input[type="radio"]:checked ~ label:before {
 form input[type="radio"]:checked ~ label {
 	color: #777;
 }
+
+form input.mdl-button[type="submit"] {
+	margin-left: 60px;
+	margin-top: 20px !important;
+}
+
+form button {
+	margin-top: 20px !important;
+}
+
 
 @media screen and (min-width: 360px) {
 
