@@ -20,7 +20,7 @@ def login():
     if login_form.validate_on_submit():
         return redirect(url_for('oauth_authorize',provider=login_form.provider.data))
 
-    return render_template('comingsoon.html',login_form=login_form)
+    return render_template('login.html',login_form=login_form)
 
 @app.route('/authorize/<provider>')
 def oauth_authorize(provider):
