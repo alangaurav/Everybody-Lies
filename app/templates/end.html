@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/modal.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/snackbar.css')}}">
-	<title>GK</title>
+	<title>Diagnosiss</title>
 </head>
 <body>
 	<div class="theHeader mdl-layout mdl-js-layout">
@@ -48,25 +48,19 @@
 	  					<span class="left"><a href=""><i class="material-icons">keyboard_arrow_left</i></a></span>
 						<span class="right"><a href=""><i class="material-icons">keyboard_arrow_right</i></a></span>
 		  			</li>
-					<li><h4 class="center">{{gk.question}}</h4>  
+					<li><h4 class="center">Based on what has happened so far what is your Diagnosiss?</h4>  
 					</li>    
-					<li class="center gkimg">
-						<img src="{{gk.image_uri}}" width="400" height="400">    
-					</li>
 					<li>    
 					</li>
 					<li class="center"> 
 					 <form action="" method="POST">
 					 {{end_form.hidden_tag()}}
 					  	<div class="mdl-textfield mdl-js-textfield">
-					  	{{end_form.answer(class_="mdl-textfield__input")}}
+					  	{{end_form.diagnosis(class_="mdl-textfield__input")}}
 					    <label class="mdl-textfield__label" for="ans"></label>
 					  </div>
    					  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" type=submit>Submit</button>
 					</form>  
-					{%if not gk.is_unlocking%}  
-<!-- 					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" disabled>Skip</button> 
- -->					{%endif%}
 					</li>
 					<li>  
 					</li>
