@@ -55,7 +55,11 @@ def oauth_callback(provider):
 @app.route('/index',methods=['GET','POST'])
 @login_required
 def index():
-    patients = Level.query.all()
+    all_patients = Level.query.all()
+    patients = []
+    for patient in all_patients:
+        if patient.is_active:
+            patients.append(patient)
     return render_template('index.html',patients=patients)
 
 
