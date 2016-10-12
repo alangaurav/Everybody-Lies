@@ -45,7 +45,9 @@
 		  		<div class="lines"></div>
 		  		<ul class="list">
 		  		<li>
-	  				<span class="left"><a href="{{url_for('treat',stage=stage|int-1,patient_name=patient_name)}}"><i class="material-icons">keyboard_arrow_left</i></a></span>
+	  				{%if stage|int > 1%}
+	  					<span class="left"><a href="{{url_for('treat',stage=stage|int-1,patient_name=patient_name)}}"><i class="material-icons">keyboard_arrow_left</i></a></span>
+	  					{%endif%}
 	  				{%if progress.stage > stage|int%}
 					<span class="right"><a href="{{url_for('treat',stage=stage|int+1,patient_name=patient_name)}}"><i class="material-icons">keyboard_arrow_right</i></a></span>
 						{%endif%}
@@ -54,27 +56,6 @@
 		  				<a><span class="modal__trigger" data-modal="#testResults">
 					  		Patient Log
 						</span></a>
-						<div id="testResults" class="modal modal__bg">
-				        <div class="modal__dialog">
-				          <div class="modal__content">
-				            <div class="modal__header">
-				              <div class="modal__title">
-				                <h2 class="modal__title-text">Results</h2>
-				              </div>
-				            </div>
-				            <div class="modal__text">
-				               {%for log in logs%}
-				               <p>{{log}}</p><br>
-				               {%endfor%}
-				            </div>
-				            <div class="modal__footer">
-				              <a class="mdl-button mdl-button--colored mdl-js-button  modal__close">
-				                Close
-				              </a>
-				            </div>
-				          </div>
-				        </div>
-				      </div>
 					<li> 
 					<h4>{{event.text}}</h4> 
 					</li>
@@ -100,6 +81,27 @@
 	  </div>
 	</footer>
 	</div>
+	<div id="testResults" class="modal modal__bg">
+				        <div class="modal__dialog">
+				          <div class="modal__content">
+				            <div class="modal__header">
+				              <div class="modal__title">
+				                <h2 class="modal__title-text">Results</h2>
+				              </div>
+				            </div>
+				            <div class="modal__text">
+				               {%for log in logs%}
+				               <br>{{log}}
+				               {%endfor%}
+				            </div>
+				            <div class="modal__footer">
+				              <a class="mdl-button mdl-button--colored mdl-js-button  modal__close">
+				                Close
+				              </a>
+				            </div>
+				          </div>
+				        </div>
+				      </div>
 <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 <script   src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>  
 <script type="text/javascript" src="{{url_for('static',filename='js/backstretch.min.js')}}"></script>
