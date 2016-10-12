@@ -17,6 +17,12 @@ a {
 	cursor: pointer!important;
 }
 
+.gkimg img {
+	max-width: 90%;
+	max-height: 100%;
+	margin: auto;
+}
+
 .green {
 
 	color: #91EB76;
@@ -226,7 +232,7 @@ footer {
 
 }
 
-form input[type="radio"]:empty {
+/*form input[type="radio"]:empty {
 	margin-left: -999px;
 }
 
@@ -263,7 +269,7 @@ form input[type="radio"]:checked ~ label:before {
 
 form input[type="radio"]:checked ~ label {
 	color: #777;
-}
+}*/
 
 form input.mdl-button[type="submit"] {
 	margin-left: 60px;

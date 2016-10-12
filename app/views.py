@@ -158,7 +158,7 @@ def treat(patient_name,stage):
                             return redirect(url_for('pre_treat',patient_name=patient_name,stage=progress.stage))
 
                         if mcq_answer.answer_level == 2:
-                            progress.log = str(patient.log + mcq_answer.result[0].result) + "|"
+                            progress.log = progress.log + str(mcq_answer.result[0].result) + "|"
                             if mcq_answer.result[0].is_fatal:
                                 progress.is_dead = True
                                 progress.log = progress.log + mcq_answer.result[0].fatality_text + "|"
