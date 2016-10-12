@@ -228,7 +228,7 @@ def treat(patient_name,stage):
 
     for diagnosis in patient.diagnosis:
         if diagnosis.stage == int(stage):
-            return render_template('end.html',end_form=end_form)
+            return render_template('end.html',end_form=end_form,stage=stage,patient_name=patient_name)
 
 @app.route('/submit/event/<patient_name>/<stage>')
 def cont_stage(patient_name,stage):

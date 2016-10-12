@@ -45,7 +45,9 @@
 		  		<div class="lines"></div>
 		  		<ul class="list">
 		  		<li>
-	  				<span class="left"><a href="{{url_for('treat',stage=stage|int-1,patient_name=patient_name)}}"><i class="material-icons">keyboard_arrow_left</i></a></span>
+	  				{%if stage|int > 1%}
+	  					<span class="left"><a href="{{url_for('treat',stage=stage|int-1,patient_name=patient_name)}}"><i class="material-icons">keyboard_arrow_left</i></a></span>
+	  					{%endif%}
 	  				{%if progress.stage > stage|int%}
 					<span class="right"><a href="{{url_for('treat',stage=stage|int+1,patient_name=patient_name)}}"><i class="material-icons">keyboard_arrow_right</i></a></span>
 						{%endif%}
