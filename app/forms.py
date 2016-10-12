@@ -11,11 +11,22 @@ class GkForm(Form):
     answer = StringField('Enter your answer',validators=[DataRequired()])
     submit = SubmitField('Submit')
 
+class GkSkipForm(Form):
+    submit = SubmitField('Skip')
+
 class McqForm(Form):
     options = RadioField(choices=[],coerce=int)
     skip = SubmitField('Skip')
     submit = SubmitField('Submit')
 
 class EndForm(Form):
-    answer = StringField('Enter your answer',validators=[DataRequired()])
+    diagnosis = StringField('Enter',validators=[DataRequired()])
     submit = SubmitField('Submit')
+
+class EventForm(Form):
+    hid = StringField()
+    submit = SubmitField('Next')
+
+class DetailsForm(Form):
+    registration_number = StringField('Enter your registration number',validators=[DataRequired()])
+    college_name = StringField('Enter College Name',validators=[DataRequired()])

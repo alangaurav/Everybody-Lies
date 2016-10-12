@@ -9,8 +9,7 @@
 	<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
 	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/modal.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/snackbar.css')}}">
-	<title>Trivia</title>
+	<title>Event</title>
 </head>
 <body>
 	<div class="theHeader mdl-layout mdl-js-layout">
@@ -26,12 +25,12 @@
 	    </div>
 	  </header>
 	  <div class="mdl-layout__drawer">
-	  	<span class="mdl-layout-title drawerTitle">Everyody Lies</span>
+	  	<span class="mdl-layout-title drawerTitle">Everybody Lies</span>
 	    <img src="image/user.png" class="user-avatar">
 	    <nav class="mdl-navigation">
 	      <a class="mdl-navigation__link" href="{{url_for('index')}}">Home</a>
-	      <a class="mdl-navigation__link" href="{{url_for('rules')}}">Rules</a>
 	      <a class="mdl-navigation__link modal__trigger" data-modal="#patientHistory">Patient File</a> 
+	      <a class="mdl-navigation__link" href="{{url_for('rules')}}">Instructions</a>
 	      <a class="mdl-navigation__link" href="{{url_for('logout')}}">Logout</a>
 	    </nav>
 	  </div>
@@ -41,51 +40,29 @@
 	  </div>
 	  <main class="mdl-layout__content">  		
 	  	<div class="cover">
-	  		<h2 class="coverHeader">Question</h2>
+	  		<h2 class="coverHeader">Success!</h2>
 		  	<div class="notepad">
-		  		<div class="lines"></div>
 		  		<ul class="list">
-		  			<li>
-	  					<span class="left"><a href="{{url_for('treat',stage=stage|int-1,patient_name=patient_name)}}"><i class="material-icons">keyboard_arrow_left</i></a></span>
-	  					{%if progress.stage > stage|int%}
-						<span class="right"><a href="{{url_for('treat',stage=stage|int+1,patient_name=patient_name)}}"><i class="material-icons">keyboard_arrow_right</i></a></span>
-						{%endif%}
+		  			<li class="center">
+		  				<a><span class="modal__trigger" data-modal="#testResults">
+					  		Patient Log
+						</span></a>
 		  			</li>
-					<li><h4 class="center">{{gk.question}}</h4>  
-					</li>
-					{%if gk.image_uri is not none%}    
-					<li class="center gkimg">
-						<img src="{{gk.image_uri}}" width="400" height="400">    
-					</li>
-					{%endif%}
-					<li>    
-					</li>
 					<li class="center"> 
-					 <form action="" method="POST">
-					 {{gk_form.hidden_tag()}}
-					  	<div class="mdl-textfield mdl-js-textfield">
-					  	{{gk_form.answer(class_="mdl-textfield__input")}}
-					    <label class="mdl-textfield__label" for="ans"></label>
-					  </div>
-   					  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" type=submit>Submit</button>
-					</form>  
+					<h4>You have successfully killed the patient, god job! More patients await you.</h4> 
 					</li>
-					<li class="center">  
-					{%if not gk.is_unlocking%} 
-					<form action="" method="POST">
-					{{gk_skip_form.hidden_tag()}}
-					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" type=submit>Skip This Question</button>
-					</form> 
-					{%endif%}
+					<li>
+					</li>    
+					<li class="center"> 
+					<a href="{{url_for('index')}}">
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored modal__trigger">Proceed</button>
+					</a>
 					</li>
 					<li>    
 					</li>
 		  		</ul>
 		  	</div>
 	  	</div>
-	  	{%for message in get_flashed_messages()%}
-	  	<div id="snackbar" >{{message}}</div>
-	  	{%endfor%}
 	  </main>
 	  <footer class="mdl-mini-footer">
 	  <div class="mdl-mini-footer__left-section">
@@ -96,24 +73,31 @@
 	  </div>
 	</footer>
 	</div>
+	<div id="testResults" class="modal modal__bg">
+				        <div class="modal__dialog">
+				          <div class="modal__content">
+				            <div class="modal__header">
+				              <div class="modal__title">
+				                <h2 class="modal__title-text">Results</h2>
+				              </div>
+				            </div>
+				            <div class="modal__text">
+				              <p>
+				               {%for log in logs%}
+				               <p>{{log}}</p>
+				               {%endfor%}
+				              </p>
+				            </div>
+				            <div class="modal__footer">
+				              <a class="mdl-button mdl-button--colored mdl-js-button  modal__close">
+				                Close
+				              </a>
+				            </div>
+				          </div>
+				        </div>
+				      </div>
 <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 <script   src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>  
-<script type="text/javascript" src="js/backstretch.min.js"></script>
-<script type="text/javascript" src="js/modal.js"></script>
-<script type="text/javascript">
-$(document).ready(function () {
-	function myFunction() {
-	    // Get the snackbar DIV
-	    var x = document.getElementById("snackbar")
-
-	    // Add the "show" class to DIV
-	    x.className = "show";
-
-	    // After 3 seconds, remove the show class from DIV
-	    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-	}
-	myFunction();
-});
-</script>
+<script type="text/javascript" src="{{url_for('static',filename='js/backstretch.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static',filename='js/modal.js')}}"></script>
 </body>
-</html>

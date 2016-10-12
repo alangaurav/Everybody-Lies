@@ -5,6 +5,8 @@ class User(UserMixin,db.Model):
     id = db.Column(db.Integer,primary_key=True)
     email = db.Column(db.String(64),nullable=False,unique=True)
     name = db.Column(db.String(64),nullable=False)
+    registration_number = db.Column(db.String(15))
+    college_name = db.Column(db.String(50))
     is_administrator = db.Column(db.Boolean,default=False)
     is_banned = db.Column(db.Boolean,default=False)
     score = db.Column(db.Integer,default=0)
@@ -15,7 +17,6 @@ class User(UserMixin,db.Model):
 class Level(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     name = db.Column(db.String(64))
-    history = db.Column(db.String(1000))
     age = db.Column(db.String(10))
     is_male = db.Column(db.Boolean,default=True)
     occupation = db.Column(db.String(50))
@@ -77,7 +78,7 @@ class Progress(db.Model):
     level_id = db.Column(db.Integer,db.ForeignKey('level.id'))
     level = db.relationship(Level,backref='level_progress')
     stage = db.Column(db.Integer)
-    log = db.Column(db.String(500))
+    log = db.Column(db.String(5000))
     completed = db.Column(db.Boolean,default=False)
     is_dead = db.Column(db.Boolean,default=False)
 
@@ -127,3 +128,12 @@ class Event(db.Model):
     level_id = db.Column(db.Integer,db.ForeignKey('level.id'))
     level = db.relationship(Level,backref='events')
     stage = db.Column(db.Integer)
+
+class FirstTry(db.Model):
+    id = db.Column(db.Integer,primary_key=True)
+    user_id = db.Column(db.Integer,db.ForeignKey('user.id'))
+    db.relationship(User,backref='firstries')
+    level_id = db.Column(db.Integer,db.ForeignKey('level.id'))
+    db.relationship(Level,backref='firstriess')
+    stage = db.Column(db.Integer)
+    is_first_try = db.Column(db.Boolean,default=True)
