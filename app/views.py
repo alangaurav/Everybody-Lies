@@ -55,7 +55,11 @@ def oauth_callback(provider):
 @app.route('/index',methods=['GET','POST'])
 @login_required
 def index():
-    patients = Level.query.all()
+    all_patients = Level.query.all()
+    patients = []
+    for patient in all_patients:
+        if patient.is_active:
+            patients.append(patient)
     return render_template('index.html',patients=patients)
 
 
@@ -143,7 +147,7 @@ def treat(patient_name,stage):
                     correct = dict(options).get(mcq_form.options.data)
                     if correct == mcq_answer:
                         if mcq_answer.answer_level == 1:
-                            progress.log += mcq_answer.result[0].result + "|"
+                            progress.log += str(mcq_answer.result[0].result) + "|"
                             db.session.commit()
                             if progress.stage == mcq.stage:
                                 if first_try.is_first_try:
@@ -154,7 +158,7 @@ def treat(patient_name,stage):
                             return redirect(url_for('pre_treat',patient_name=patient_name,stage=progress.stage))
 
                         if mcq_answer.answer_level == 2:
-                            progress.log = patient.log + mcq_answer.result[0].result + "|"
+                            progress.log = str(patient.log + mcq_answer.result[0].result) + "|"
                             if mcq_answer.result[0].is_fatal:
                                 progress.is_dead = True
                                 progress.log = progress.log + mcq_answer.result[0].fatality_text + "|"
@@ -168,7 +172,7 @@ def treat(patient_name,stage):
                             return redirect(url_for('treat',patient_name=patient_name,stage=stage))
 
                         if mcq_answer.answer_level == 3:
-                            progress.log += mcq_answer.result[0].result + "|"
+                            progress.log += str(mcq_answer.result[0].result) + "|"
                             if mcq_answer.result[0].is_fatal:
                                 progress.is_dead = True
                                 progress.log = progress.log + mcq_answer.result[0].fatality_text + "|"
