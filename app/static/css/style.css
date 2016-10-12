@@ -72,8 +72,8 @@ button {
 }
 
 .gkimg {
-	max-height: 400px;
-	max-width: 400px;
+	max-height: 100%;
+	max-width: 100%;
 	align-self: center;
 	margin: auto;
 }
