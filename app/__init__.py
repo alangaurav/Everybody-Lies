@@ -17,7 +17,7 @@ admin = Admin(app,name='Everybody_Lies',template_mode='bootstrap3')
 from app import views,models
 class MyView(ModelView):
     def is_accessible(self):
-        return current_user.is_authenticated #and current_user.is_administrator
+        return current_user.is_authenticated and current_user.is_administrator
 admin.add_view(MyView(models.User,db.session))
 admin.add_view(MyView(models.Level,db.session))
 admin.add_view(MyView(models.Mcq,db.session))
