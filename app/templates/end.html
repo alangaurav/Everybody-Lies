@@ -20,17 +20,17 @@
 	      <div class="mdl-layout-spacer"></div>
 	      <nav class="mdl-navigation">
 	        <a class="mdl-navigation__link" href="{{url_for('index')}}">Home</a>
-	        <a class="mdl-navigation__link" href="{{url_for('rules')}}">Rules</a>
+	        <a class="mdl-navigation__link" href="{{url_for('rules')}}">Instructions</a>
 	        <a class="mdl-navigation__link" href="{{url_for('logout')}}">Logout</a>
 	      </nav>
 	    </div>
 	  </header>
 	  <div class="mdl-layout__drawer">
 	  	<span class="mdl-layout-title drawerTitle">Everyody Lies</span>
-	    <img src="image/user.png" class="user-avatar">
+	    <img src="{{url_for('static',filename='image/user.png')}}" class="user-avatar">
 	    <nav class="mdl-navigation">
 	      <a class="mdl-navigation__link" href="{{url_for('index')}}">Home</a>
-	        <a class="mdl-navigation__link" href="{{url_for('rules')}}">Rules</a>
+	        <a class="mdl-navigation__link" href="{{url_for('rules')}}">Instructions</a>
 	        <a class="mdl-navigation__link" href="{{url_for('logout')}}">Logout</a>
 	    </nav>
 	  </div>
@@ -71,11 +71,12 @@
 	  	<div id="snackbar" >{{message}}</div>
 	  	{%endfor%}
 	  </main>
-	  <footer class="mdl-mini-footer">
+	   <footer class="mdl-mini-footer">
 	  <div class="mdl-mini-footer__left-section">
+	    <div class="mdl-logo"></div>
 	    <ul class="mdl-mini-footer__link-list">
-	      <li><a href="#">Help</a></li>
-	      <li><a href="#">Privacy & Terms</a></li>
+	      <li><a href="https://github.com/catatonia">Beer And LIT</a></li>
+	      <li><a href="https://www.youtube.com/watch?v=QK8mJJJvaes">BMESI</a></li>
 	    </ul>
 	  </div>
 	</footer>
