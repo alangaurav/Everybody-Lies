@@ -23,6 +23,10 @@ a {
 	margin: auto;
 }
 
+
+
+
+
 .green {
 
 	color: #91EB76;
@@ -232,7 +236,7 @@ footer {
 
 }
 
-/*form input[type="radio"]:empty {
+form input[type="radio"]:empty {
 	margin-left: -999px;
 }
 
@@ -269,7 +273,7 @@ form input[type="radio"]:checked ~ label:before {
 
 form input[type="radio"]:checked ~ label {
 	color: #777;
-}*/
+}
 
 form input.mdl-button[type="submit"] {
 	margin-left: 60px;
@@ -280,6 +284,20 @@ form button {
 	margin-top: 20px !important;
 }
 
+li li {
+	padding: 0px;
+	margin:0px;
+}
+
+form ul {
+	padding: 0px;
+	margin:0px;
+}
+
+form ul li {
+	padding: 0px;
+	margin:0px;
+}
 
 @media screen and (min-width: 360px) {
 
