@@ -207,10 +207,11 @@ def treat(patient_name,stage):
     print "GK SKIP FORM"
     print gk_skip_form.is_submitted()
     if gk_skip_form.validate_on_submit():
-        if progress.stage == int(stage):
-            progress.stage += 1
-            db.session.commit()
-        return redirect(url_for('pre_treat',patient_name=patient_name))
+	pass
+        #if progress.stage == int(stage):
+        #    progress.stage += 1
+        #    db.session.commit()
+        #return redirect(url_for('pre_treat',patient_name=patient_name))
 
 
     for mcq in patient.Mcqs:
