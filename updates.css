@@ -1,0 +1,9 @@
+/*toggle these classes for the div of your choice
+*/
+.show {
+  display : block;
+}
+
+.hide {
+  display : none;
+}
